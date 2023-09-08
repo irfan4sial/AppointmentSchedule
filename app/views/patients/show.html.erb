@@ -1,0 +1,5 @@
+<h1>Patient Name: <%= @patient.name %></h1>
+<%= link_to "Book appointment for #{@patient.name}", new_patient_appointment_path(@patient) %>
+<p><%= link_to "#{@patient.name}'s appointments", patient_appointments_url(@patient) %></p>
+<%= link_to "Patients List", patients_url %>
+<%= link_to "Edit Patient", edit_patient_url(@patient) %>

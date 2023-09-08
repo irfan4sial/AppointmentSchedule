@@ -1,0 +1,5 @@
+<p style="color: green"><%= notice %></p>
+<h3>Doctor Name:<%= @doctor.name %></h3>
+<p><%= link_to "Book New Appointment With #{@doctor.name}", new_doctor_appointment_path(@doctor) %></p>
+<p><%= link_to "#{@doctor.name}'s Appointments List", doctor_appointments_url(@doctor) %></p>
+<%= link_to "Go To Doctors List", doctors_url %>

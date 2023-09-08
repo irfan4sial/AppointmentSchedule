@@ -1,0 +1,14 @@
+<nav>
+  <% if user_signed_in? %>
+    <%= link_to "Patient", patients_url %>
+    <%= link_to "Doctors", doctors_url %>
+    <%= link_to "Appointments", appointments_url %>
+    <%= form_tag(destroy_user_session_path, method: :delete, style: 'display: inline-block;') do %>
+      <%= submit_tag "Sign Out" %>
+    <% end %>
+
+  <% else %>
+    <%= link_to "Registration", new_user_registration_url %>
+    <%= link_to "Sign In", new_user_session_url %>
+  <% end %>
+</nav>

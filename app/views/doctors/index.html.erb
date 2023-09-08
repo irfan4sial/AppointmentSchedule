@@ -1,0 +1,17 @@
+<%= link_to "Create New Doctor", new_doctor_url %>
+
+<h1>Doctors List</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>View</th>
+  </tr>
+  <tbody>
+  <% @doctors.each do |doctor| %>
+    <tr>
+      <td><%= doctor.name %></td>
+      <td><%= link_to "View", doctor_url(doctor) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

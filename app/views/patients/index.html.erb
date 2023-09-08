@@ -1,0 +1,23 @@
+<h1>Patients List</h1><br />
+<button><%= link_to "New Patient", new_patient_url %></button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>View</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.name %></td>
+        <td><%= link_to "Edit", edit_patient_url(patient) %></td>
+        <td><%= link_to "View", patient_url(patient) %></td>
+        <td><%= button_to "Delete", patient, data: { turbo_method: :delete, confirm: "Are you sure?" }, confirm: "Are you sure?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

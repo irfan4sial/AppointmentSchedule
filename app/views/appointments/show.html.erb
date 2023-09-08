@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+<h1>Appointment Details:</h1>
+<p>Patient: <%= link_to @appointment.patient.name, patient_url(@appointment.patient)  %></p>
+<p>Doctor: <%= link_to @appointment.doctor.name, doctor_url(@appointment.doctor) %></p>
+<p>Location: <%= @appointment.location %></p>
+<p>Start Time: <%= @appointment.start_time.strftime('%b %e, %l:%M %p') %></p>
+<p>End Time: <%= @appointment.end_time.strftime('%b %e, %l:%M %p') %></p>
+<p><%= link_to "Edit Appointment", edit_appointment_url(@appointment) %></p>
+<p>
+  <%= form_tag(appointment_url(@appointment) , method: :delete, style: 'display: inline-block') do %>
+    <%= submit_tag "Delete Appointment" %>
+  <% end %>
+</p>
