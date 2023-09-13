@@ -30,6 +30,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     respond_to do |format|
       if @appointment.save
+        AppointmentJob.perform_later
         format.html { redirect_to @appointment, notice: "Appointment created successfully"}
         format.json { render :show, status: :created, location: @appointment}
       else
