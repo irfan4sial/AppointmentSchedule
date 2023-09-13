@@ -29,6 +29,7 @@ gem "jbuilder"
 gem "devise"
 gem "sidekiq"
 gem "redis"
+gem 'unicorn'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
