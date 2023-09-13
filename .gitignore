@@ -12,6 +12,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.idea/workspace.xml
+.idea/workspace.xml
+.idea/
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
